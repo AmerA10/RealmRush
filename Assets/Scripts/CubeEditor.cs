@@ -11,7 +11,8 @@ public class CubeEditor : MonoBehaviour
     [Range(1f, 20f)]
     
     [SerializeField] TextMesh textMesh;
-    
+
+
    
     Waypoint waypoint;
     void Awake()
@@ -24,19 +25,22 @@ public class CubeEditor : MonoBehaviour
     {
         SnapToGrid();
         UpdateLabel();
+ 
         // if it is 6 for ex it becomes .6 then round to 1 then becomes 10
         //if it is 4 for ex it comes .4 then round 0 then becomes 0
 
     }
+
+    
 
     private void SnapToGrid()
     {
         int gridSize = waypoint.GetGridSize();
  
         transform.position = new Vector3(
-            waypoint.GetGridPos().x, 
+            waypoint.GetGridPos().x * gridSize, 
             0f,
-            waypoint.GetGridPos().y
+            waypoint.GetGridPos().y * gridSize
         );
     }
 
@@ -44,9 +48,9 @@ public class CubeEditor : MonoBehaviour
     {
         int gridSize = waypoint.GetGridSize();
         textMesh = transform.GetComponentInChildren<TextMesh>();
-        string textLabel = waypoint.GetGridPos().x / gridSize 
+        string textLabel = waypoint.GetGridPos().x 
             + "," 
-            + waypoint.GetGridPos().y / gridSize; 
+            + waypoint.GetGridPos().y ; 
         textMesh.text = textLabel;
         this.name = textLabel;
     }

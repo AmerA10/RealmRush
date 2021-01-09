@@ -9,7 +9,7 @@ public class EnemyMover : MonoBehaviour
     [SerializeField] List<Waypoint> path;
     void Start()
     {
-        StartCoroutine(FollowPath());//starts here
+       
         Debug.Log("im back at start"); //unity does other stuff in between coroutine times
         
         //goes here then
