@@ -3,33 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
+[SelectionBase]
+[RequireComponent(typeof(Waypoint))]
 public class CubeEditor : MonoBehaviour
 {
     // Start is called before the first frame update
     [Range(1f, 20f)]
-    [SerializeField] float gridSize = 10f;
+    
     [SerializeField] TextMesh textMesh;
-
+    
+   
+    Waypoint waypoint;
     void Awake()
     {
-       
-        
+
+        waypoint = GetComponent<Waypoint>();
     }
 
     void Update()
     {
-
-        Vector3 snapPos;
-        textMesh = transform.GetComponentInChildren<TextMesh>();
-     
-        snapPos.x = Mathf.RoundToInt(transform.position.x/ gridSize) * gridSize; //basically makes any value either a multiple of 10 or 0
-        snapPos.z = Mathf.RoundToInt(transform.position.z / gridSize) * gridSize;
-        transform.position = new Vector3(snapPos.x, 0f, snapPos.z);
-        string textLabel = snapPos.x / gridSize + "," + snapPos.z / gridSize; ;
-        textMesh.text = textLabel;
-        this.name = textLabel;
+        SnapToGrid();
+        UpdateLabel();
         // if it is 6 for ex it becomes .6 then round to 1 then becomes 10
         //if it is 4 for ex it comes .4 then round 0 then becomes 0
-        
+
+    }
+
+    private void SnapToGrid()
+    {
+        int gridSize = waypoint.GetGridSize();
+ 
+        transform.position = new Vector3(
+            waypoint.GetGridPos().x, 
+            0f,
+            waypoint.GetGridPos().y
+        );
+    }
+
+    private void UpdateLabel()
+    {
+        int gridSize = waypoint.GetGridSize();
+        textMesh = transform.GetComponentInChildren<TextMesh>();
+        string textLabel = waypoint.GetGridPos().x / gridSize 
+            + "," 
+            + waypoint.GetGridPos().y / gridSize; 
+        textMesh.text = textLabel;
+        this.name = textLabel;
     }
 }

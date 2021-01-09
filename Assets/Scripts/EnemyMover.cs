@@ -6,7 +6,7 @@ public class EnemyMover : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] List<WayPoint> path;
+    [SerializeField] List<Waypoint> path;
     void Start()
     {
         StartCoroutine(FollowPath());//starts here
@@ -23,7 +23,7 @@ public class EnemyMover : MonoBehaviour
     IEnumerator FollowPath()
     {
         Debug.Log("Starting Patrol");
-        foreach (WayPoint waypoint in path)//loops here
+        foreach (Waypoint waypoint in path)//loops here
         {
             transform.position = waypoint.transform.position;
             Debug.Log("Visiting Blocks: " + waypoint.name);
