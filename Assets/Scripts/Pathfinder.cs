@@ -10,6 +10,9 @@ public class Pathfinder : MonoBehaviour
     Queue<Waypoint> queue = new Queue<Waypoint>();
     bool isRunning = true;
     Waypoint searchCenter; //the currentSearch center
+    [SerializeField] List<Waypoint> path = new List<Waypoint>();//todo make private
+
+
     Vector2Int[] directions = { 
 
 
@@ -25,15 +28,37 @@ public class Pathfinder : MonoBehaviour
     [SerializeField] Color endColor;
 
 
-    void Start()
+    public List<Waypoint> GetPath()
     {
+
         LoadBlocks();
         SetStartEndWayPointColor();
-        Pathfind();
-
+        BreadthFIrstSearch();
+        MakePath();
+        return path;
     }
 
-    private void Pathfind()
+
+    private void MakePath()
+    {
+        /* THis works too but its not his way ...
+         while(previous != null)
+         {
+             path.Add(previous);
+             previous = previous.exploredFrom;
+         }*/
+        Waypoint previous = endWaypoint.exploredFrom;
+        path.Add(endWaypoint);
+        while(previous != startWaypoint)
+        {
+            path.Add(previous);
+            previous = previous.exploredFrom;
+        }
+        path.Add(startWaypoint);
+        path.Reverse();
+    }
+
+    private void BreadthFIrstSearch()
     {
         queue.Enqueue(startWaypoint);
         while(queue.Count > 0 && isRunning)
@@ -68,18 +93,16 @@ public class Pathfinder : MonoBehaviour
         {
             return;
         }
-        foreach(Vector2Int direction in directions)
+        foreach (Vector2Int direction in directions)
         {
             Vector2Int neighbourCoordinates = searchCenter.GetGridPos() + direction;
-            
-            try
+
+
+            if (grid.ContainsKey(neighbourCoordinates))
             {
                 QueueNewNeighbours(neighbourCoordinates);
             }
-            catch
-            {
-                //do nothing
-            }
+
            
         }
     }

@@ -6,13 +6,12 @@ public class EnemyMover : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] List<Waypoint> path;
     void Start()
     {
-       
+        Pathfinder pathfinder = FindObjectOfType<Pathfinder>();
         Debug.Log("im back at start"); //unity does other stuff in between coroutine times
-        
-        //goes here then
+        List<Waypoint> path = pathfinder.GetPath();
+        StartCoroutine(FollowPath(path));
     }
 
     void Update()
@@ -20,7 +19,7 @@ public class EnemyMover : MonoBehaviour
         
     }
 
-    IEnumerator FollowPath()
+    IEnumerator FollowPath(List<Waypoint> path)
     {
         Debug.Log("Starting Patrol");
         foreach (Waypoint waypoint in path)//loops here
