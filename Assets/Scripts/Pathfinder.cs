@@ -73,7 +73,7 @@ public class Pathfinder : MonoBehaviour
         }
 
         //todo workout path
-        Debug.Log("Finished path finding..?");
+       // Debug.Log("Finished path finding..?");
     }
 
     private void HaltIfEndFound()
