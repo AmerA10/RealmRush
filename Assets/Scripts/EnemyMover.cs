@@ -26,7 +26,7 @@ public class EnemyMover : MonoBehaviour
         {
             transform.position = waypoint.transform.position;
           //  Debug.Log("Visiting Blocks: " + waypoint.name);
-            yield return new WaitForSeconds(1f); //gives us control for one second and comes back
+            yield return new WaitForSeconds(2f); //gives us control for one second and comes back
         }
 
        // Debug.Log("Ending Patrol");

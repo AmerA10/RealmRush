@@ -1644,7 +1644,7 @@ PrefabInstance:
         type: 3}
       propertyPath: targetEnemy
       value: 
-      objectReference: {fileID: 1256315256}
+      objectReference: {fileID: 1793331321}
     - target: {fileID: 5771409864173250127, guid: 60093f7bf91ad4247a583ab3030b9cc2,
         type: 3}
       propertyPath: m_RootOrder
@@ -4508,7 +4508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae431405e494d1b48b72ed34d14b3cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsBetweenSpawns: 2
+  secondsBetweenSpawns: 3
   enemy: {fileID: 339014151, guid: 72db05531eb283946a1fea286519e933, type: 3}
   isSpawning: 1
 --- !u!1001 &1747472613
@@ -4749,6 +4749,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1700885526}
     m_Modifications:
+    - target: {fileID: 6135452637258928327, guid: 72db05531eb283946a1fea286519e933,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135452637258928327, guid: 72db05531eb283946a1fea286519e933,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7058779318166798760, guid: 72db05531eb283946a1fea286519e933,
         type: 3}
       propertyPath: m_RootOrder
@@ -4757,7 +4767,7 @@ PrefabInstance:
     - target: {fileID: 7058779318166798760, guid: 72db05531eb283946a1fea286519e933,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7058779318166798760, guid: 72db05531eb283946a1fea286519e933,
         type: 3}
@@ -5553,16 +5563,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower
       objectReference: {fileID: 0}
-    - target: {fileID: 5771409864173250126, guid: 60093f7bf91ad4247a583ab3030b9cc2,
-        type: 3}
-      propertyPath: attackRange
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5771409864173250126, guid: 60093f7bf91ad4247a583ab3030b9cc2,
-        type: 3}
-      propertyPath: targetEnemy
-      value: 
-      objectReference: {fileID: 1256315256}
     - target: {fileID: 5771409864173250127, guid: 60093f7bf91ad4247a583ab3030b9cc2,
         type: 3}
       propertyPath: m_RootOrder

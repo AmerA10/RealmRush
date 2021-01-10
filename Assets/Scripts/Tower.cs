@@ -8,9 +8,9 @@ public class Tower : MonoBehaviour
     [SerializeField] Transform objectToPan;
     [SerializeField] float attackRange;
     [SerializeField] ParticleSystem gun;
-
+    
     //state of each tower
-    Transform targetEnemy;
+    [SerializeField]Transform targetEnemy;
 
     /*
      * Recipe for suerlatives
@@ -26,8 +26,8 @@ public class Tower : MonoBehaviour
     void Update()
     {
         SetTargetEnemy();
-        
-        if(targetEnemy)
+       
+        if (targetEnemy != null)
         {
             LookAtEnemy();
             FireAtEnemy();
@@ -41,7 +41,7 @@ public class Tower : MonoBehaviour
 
     private void SetTargetEnemy()
     {
-        var sceneEnemies = FindObjectsOfType<EnemyCollisiionHandler>();
+        EnemyCollisiionHandler[] sceneEnemies = FindObjectsOfType<EnemyCollisiionHandler>();
         if(sceneEnemies.Length == 0)
         {
             return;
@@ -65,10 +65,9 @@ public class Tower : MonoBehaviour
         if (disToA > disToB) {
             return transformB;
         }
-        else
-        {
+       
             return transformA;
-        }
+        
     }
 
     private void FireAtEnemy()
@@ -77,12 +76,12 @@ public class Tower : MonoBehaviour
         if (distanceToEnemy <= attackRange)
         {
             Shoot(true);
-            Debug.Log("Shooting: " + distanceToEnemy);
+           
         }
         else
         {
             Shoot(false);
-            Debug.Log("Not Shooting: " + distanceToEnemy);
+           
         }
     }
 
@@ -94,6 +93,7 @@ public class Tower : MonoBehaviour
     }
     private void LookAtEnemy()
     {
+        Debug.Log("Looking at enemy: " + targetEnemy.transform.position);
         objectToPan.LookAt(targetEnemy);
     }
 }

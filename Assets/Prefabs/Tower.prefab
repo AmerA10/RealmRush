@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 5771003315220748979}
-  targetEnemy: {fileID: 0}
   attackRange: 30
   gun: {fileID: 1466440653}
 --- !u!1001 &2749897021768882085
@@ -59,7 +58,7 @@ PrefabInstance:
     - target: {fileID: 2749897022987848808, guid: a3778037f4a52af4a9b40b6fd84e0e65,
         type: 3}
       propertyPath: startDelay.scalar
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2749897022987848814, guid: a3778037f4a52af4a9b40b6fd84e0e65,
         type: 3}
