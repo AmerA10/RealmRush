@@ -13,6 +13,7 @@ public class Pathfinder : MonoBehaviour
     [SerializeField] List<Waypoint> path = new List<Waypoint>();//todo make private
 
 
+
     Vector2Int[] directions = { 
 
 
@@ -30,11 +31,17 @@ public class Pathfinder : MonoBehaviour
 
     public List<Waypoint> GetPath()
     {
+        
+        if(path.Count == 0)
+        {
+            
+            LoadBlocks();
+            SetStartEndWayPointColor();
+            BreadthFIrstSearch();
+            MakePath();
+        }
 
-        LoadBlocks();
-        SetStartEndWayPointColor();
-        BreadthFIrstSearch();
-        MakePath();
+      
         return path;
     }
 

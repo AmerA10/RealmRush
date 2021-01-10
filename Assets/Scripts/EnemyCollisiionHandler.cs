@@ -8,6 +8,8 @@ public class EnemyCollisiionHandler : MonoBehaviour
     [SerializeField] int maxHits = 3;
     [SerializeField] GameObject hitFX;
     [SerializeField] GameObject deathFX;
+
+
     void Start()
     {
         
@@ -22,8 +24,8 @@ public class EnemyCollisiionHandler : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         Debug.Log("Colliding with particle");
-        maxHits--;
-        if(maxHits <= 0)
+        ProcessHit();
+        if (maxHits <= 0)
         {
             KillEnemy();
         }
@@ -31,6 +33,11 @@ public class EnemyCollisiionHandler : MonoBehaviour
         {
             playDamage();
         }
+    }
+
+    private void ProcessHit()
+    {
+        maxHits--;
     }
 
     private void playDamage()
