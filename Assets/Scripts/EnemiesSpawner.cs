@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemiesSpawner : MonoBehaviour
 {
 
+    [Range(0.1f, 120f)]
     [SerializeField] float secondsBetweenSpawns = 2f;
     [SerializeField] EnemyMover enemy;
     [SerializeField] bool isSpawning = true;
