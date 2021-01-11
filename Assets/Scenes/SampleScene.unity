@@ -1345,10 +1345,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1757078172}
     m_Modifications:
-    - target: {fileID: 61404285, guid: 5aac8c33b13d6b44785e6d583abd0985, type: 3}
-      propertyPath: m_Text
-      value: 1,0
-      objectReference: {fileID: 0}
     - target: {fileID: 1442487828706862907, guid: 5aac8c33b13d6b44785e6d583abd0985,
         type: 3}
       propertyPath: m_RootOrder
@@ -1409,11 +1405,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1,0
       objectReference: {fileID: 0}
-    - target: {fileID: 1442487829761916083, guid: 5aac8c33b13d6b44785e6d583abd0985,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b627e56c0c7905e40b69bf0a84cc8bb9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aac8c33b13d6b44785e6d583abd0985, type: 3}
 --- !u!4 &626101791 stripped
@@ -3374,10 +3365,6 @@ PrefabInstance:
       propertyPath: m_Text
       value: 3,0
       objectReference: {fileID: 0}
-    - target: {fileID: 1646851380, guid: 5aac8c33b13d6b44785e6d583abd0985, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1442487828706862907, guid: 5aac8c33b13d6b44785e6d583abd0985,
         type: 3}
       propertyPath: m_RootOrder
@@ -3438,11 +3425,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3,0
       objectReference: {fileID: 0}
-    - target: {fileID: 1442487829761916083, guid: 5aac8c33b13d6b44785e6d583abd0985,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b627e56c0c7905e40b69bf0a84cc8bb9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aac8c33b13d6b44785e6d583abd0985, type: 3}
 --- !u!4 &1274950349 stripped
@@ -4659,9 +4641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: []
   startWaypoint: {fileID: 1646851382}
-  startColor: {r: 0.13523416, g: 1, b: 0.058823526, a: 0}
   endWaypoint: {fileID: 1797223026}
-  endColor: {r: 1, g: 0, b: 0.13319111, a: 0}
 --- !u!1001 &1776897595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5399,6 +5379,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1757078172}
     m_Modifications:
+    - target: {fileID: 61404285, guid: 5aac8c33b13d6b44785e6d583abd0985, type: 3}
+      propertyPath: m_Text
+      value: 5,3
+      objectReference: {fileID: 0}
     - target: {fileID: 1442487828706862907, guid: 5aac8c33b13d6b44785e6d583abd0985,
         type: 3}
       propertyPath: m_RootOrder

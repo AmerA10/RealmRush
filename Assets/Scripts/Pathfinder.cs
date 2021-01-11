@@ -24,9 +24,9 @@ public class Pathfinder : MonoBehaviour
 
     };
     [SerializeField] Waypoint startWaypoint;
-    [SerializeField] Color startColor;
+
     [SerializeField] Waypoint endWaypoint;
-    [SerializeField] Color endColor;
+
 
 
     public List<Waypoint> GetPath()
@@ -36,7 +36,6 @@ public class Pathfinder : MonoBehaviour
         {
             
             LoadBlocks();
-            SetStartEndWayPointColor();
             BreadthFIrstSearch();
             MakePath();
         }
@@ -87,7 +86,7 @@ public class Pathfinder : MonoBehaviour
     {
         if(searchCenter == endWaypoint)
         {
-            searchCenter.SetTopColor(Color.red);
+            
           
             isRunning = false;
                 
@@ -155,9 +154,5 @@ public class Pathfinder : MonoBehaviour
         
     }
 
-    void SetStartEndWayPointColor()
-    {
-        startWaypoint.SetTopColor(startColor);
-        endWaypoint.SetTopColor(endColor);
-    }
+
 }

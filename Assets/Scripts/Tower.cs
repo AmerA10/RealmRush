@@ -93,7 +93,7 @@ public class Tower : MonoBehaviour
     }
     private void LookAtEnemy()
     {
-        Debug.Log("Looking at enemy: " + targetEnemy.transform.position);
+
         objectToPan.LookAt(targetEnemy);
     }
 }

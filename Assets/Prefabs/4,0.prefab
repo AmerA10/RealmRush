@@ -81,7 +81,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61404283}
-  m_Text: 5,3
+  m_Text: 1,0
   m_OffsetZ: 0.38
   m_CharacterSize: 3
   m_LineSpacing: 1
@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 1442487828706862907}
   - component: {fileID: 1646851380}
   - component: {fileID: 4973389317049745146}
+  - component: {fileID: 1973803545}
   m_Layer: 0
   m_Name: 4,0
   m_TagString: Untagged
@@ -156,6 +157,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isExplored: 0
   exploredFrom: {fileID: 0}
+--- !u!65 &1973803545
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442487828706862908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &1442487829761916085
 GameObject:
   m_ObjectHideFlags: 0
