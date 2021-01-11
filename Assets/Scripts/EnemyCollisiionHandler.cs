@@ -23,7 +23,7 @@ public class EnemyCollisiionHandler : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log("Colliding with particle");
+        
         ProcessHit();
         if (maxHits <= 0)
         {
