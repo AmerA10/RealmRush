@@ -6,7 +6,7 @@ public class EnemyCollisiionHandler : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] int maxHits = 3;
-    [SerializeField] GameObject hitFX;
+    [SerializeField] ParticleSystem hitFX;
     [SerializeField] GameObject deathFX;
 
 
@@ -42,7 +42,7 @@ public class EnemyCollisiionHandler : MonoBehaviour
 
     private void playDamage()
     {
-        GameObject hitFx = Instantiate(hitFX, transform.position, Quaternion.identity);
+        hitFX.Play();
     }
 
     private void KillEnemy()

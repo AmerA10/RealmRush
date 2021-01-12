@@ -6,7 +6,7 @@ public class Waypoint : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] Tower tower;
+  
 
 
     Vector2Int gridPos;
@@ -49,9 +49,9 @@ public class Waypoint : MonoBehaviour
             if(this.isPlaceable)
             {
                 Debug.Log("placeable block: " + this.transform.name);
-                Instantiate(tower, this.transform.position, Quaternion.identity);
-                isPlaceable = false;
-            
+                FindObjectOfType<TowerFactory>().AddTower(this);
+
+
             }
             else
             {

@@ -11,6 +11,7 @@ public class Tower : MonoBehaviour
     
     //state of each tower
     [SerializeField]Transform targetEnemy;
+    public Waypoint baseWaypoint;
 
     /*
      * Recipe for suerlatives
