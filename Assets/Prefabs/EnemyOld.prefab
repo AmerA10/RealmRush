@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2bc8120c56ba3244a01d817c81d6d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveTime: 0.5
+  deathFX: {fileID: 1594431110487089147, guid: cbfed3848a2d63e489e7bb9dc7998d90, type: 3}
 --- !u!54 &1892858003
 Rigidbody:
   m_ObjectHideFlags: 0
