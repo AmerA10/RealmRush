@@ -25,7 +25,7 @@ public class EnemiesSpawner : MonoBehaviour
     {
         while (isSpawning)
         {
-            Instantiate(enemy, transform.position, Quaternion.identity);
+            Instantiate(enemy, transform.position, Quaternion.identity, this.transform);
             yield return new WaitForSeconds(secondsBetweenSpawns);
         }
 

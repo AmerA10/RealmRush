@@ -77,7 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHits: 3
   hitFX: {fileID: 1560548138651615546}
-  deathFX: {fileID: 5807501525930590365, guid: 52e7db394a552674a9c016d6130fcc76, type: 3}
+  deathFX: {fileID: 5807501525930590352, guid: 52e7db394a552674a9c016d6130fcc76, type: 3}
 --- !u!1001 &1288249012
 PrefabInstance:
   m_ObjectHideFlags: 0
