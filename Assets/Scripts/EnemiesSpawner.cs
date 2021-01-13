@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class EnemiesSpawner : MonoBehaviour
 {
 
@@ -9,10 +9,22 @@ public class EnemiesSpawner : MonoBehaviour
     [SerializeField] float secondsBetweenSpawns = 2f;
     [SerializeField] EnemyMover enemy;
     [SerializeField] bool isSpawning = true;
+    [SerializeField] Text scoreText;
+    [SerializeField] int scorePerEnemy = 1;
+    private int score = 0;
+
+    [SerializeField] AudioClip spawnedEnemySFX;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(spawnEnemies());   
+
+
+        scoreText.text = score.ToString();
+        StartCoroutine(spawnEnemies());
+        
     }
 
     // Update is called once per frame
@@ -26,8 +38,16 @@ public class EnemiesSpawner : MonoBehaviour
         while (isSpawning)
         {
             Instantiate(enemy, transform.position, Quaternion.identity, this.transform);
+            IncreaseScore();
+            GetComponent<AudioSource>().PlayOneShot(spawnedEnemySFX);
             yield return new WaitForSeconds(secondsBetweenSpawns);
         }
 
+    }
+
+    private void IncreaseScore()
+    {
+        score += scorePerEnemy;
+        scoreText.text = score.ToString();
     }
 }
